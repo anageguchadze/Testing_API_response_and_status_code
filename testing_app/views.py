@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from .models import PrivateItem
+from .serializers import PrivateItemSerializer
 
-# Create your views here.
+class PrivateItemViewSet(viewsets.ModelViewSet):
+    queryset = PrivateItem.objects.all()
+    serializer_class = PrivateItemSerializer
+    permission_classes = [IsAuthenticated]
