@@ -1,9 +1,8 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
-from .models import PrivateItem
-from .serializers import PrivateItemSerializer
+from .models import Item
+from .serializers import ItemSerializer
 
-class PrivateItemViewSet(viewsets.ModelViewSet):
-    queryset = PrivateItem.objects.all()
-    serializer_class = PrivateItemSerializer
-    permission_classes = [IsAuthenticated]
+class ItemViewSet(viewsets.ModelViewSet):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
+    

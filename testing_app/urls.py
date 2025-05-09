@@ -1,10 +1,11 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import PrivateItemViewSet
+from .views import ItemViewSet
 
 router = DefaultRouter()
-router.register(r'private-items', PrivateItemViewSet, basename='privateitem')
+router.register(r'items', ItemViewSet, basename='item')
+
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
 ]

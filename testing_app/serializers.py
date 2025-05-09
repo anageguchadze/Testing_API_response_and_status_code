@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import PrivateItem
+from .models import Item
 
-class PrivateItemSerializer(serializers.ModelSerializer):
+class ItemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PrivateItem
+        model = Item
         fields = '__all__'
